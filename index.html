@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>   
+    <div class="flex-container">
+        <form id="config-form">
+            <h2>Configuración del Juego</h2>
+            <label for="rows">Número de filas (mínimo 5):</label>
+            <input type="number" id="rows" name="rows" min="5" required>
+            <br>
+            <label for="cols">Número de columnas (mínimo 5):</label>
+            <input type="number" id="cols" name="cols" min="5" required>
+            <br>
+            <label for="mines">Cantidad de minas:</label>
+            <input type="number" id="mines" name="mines" required>
+            <br>
+            <button type="submit">Iniciar Juego</button>
+        </form>
+    </div>
+
+    <div class="flex-container" id="game-container" style="display: none;">
+        <div class="game-board">
+            <table id="board"></table>
+        </div>
+    </div>
+
+    <section id="footer">
+        <div id="start">Inicio</div>
+        <div id="size-btns">
+            <button data-difficulty="Fácil" class="difficulty-btn">1. Fácil</button>
+            <button data-difficulty="Medio" class="difficulty-btn">2. Medio</button>
+            <button data-difficulty="Difícil" class="difficulty-btn">3. Difícil</button>
+            <button data-difficulty="Muy Difícil" class="difficulty-btn">4. Muy Difícil</button>
+            <button data-difficulty="Hardcore" class="difficulty-btn">5. Hardcore</button>
+            <button data-difficulty="Leyenda" class="difficulty-btn">6. Leyenda</button>
+        </div>
+        <div id="clock">Clic derecho para marcar una mina</div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

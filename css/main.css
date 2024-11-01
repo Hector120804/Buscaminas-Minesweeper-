@@ -1,0 +1,420 @@
+@font-face {
+    font-family: "Digital Dismay";
+    src: url("./digital-dismay.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Press Start";
+    src: url("./prstart.ttf");
+}
+
+@font-face {
+    font-family: "MS Sans Serif";
+    src: url("./micross.ttf");
+}
+
+* {
+    -o-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-color: #0D8584;
+}
+
+#board {
+    background-color: lightgray;
+    margin: 20px auto;
+}
+
+button {
+    font-family: 'MS Sans Serif';
+    text-align: left;
+    font-size: 14px;
+    height: 30px;
+    width: 100px;
+    background-color: #BFBFBF;
+    color: black;
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+}
+
+button:hover {
+    background-color: lightgray;
+    color: slategray;
+    cursor: pointer;
+}
+
+#config-form {
+    font-family: 'MS Sans Serif';
+    background-color: #BFBFBF;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    border: 2px solid #7B7B7B;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+}
+
+#config-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#config-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#config-form button {
+    width: 100%;
+    cursor: pointer;
+}
+
+#clock {
+    font-family: 'MS Sans Serif';
+    font-size: 14px;
+    display: inline;
+    float: right;
+    border-top: 1.5px solid #808080;
+    border-left: 1.5px solid #808080;
+    border-right: 1.5px solid #FAFAFA;
+    border-bottom: 1.5px solid #FAFAFA;
+    width: 200px;
+    height: 22px;
+    margin: 2px;
+    padding: 5px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #BFBFBF;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#start {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#start img {
+    vertical-align: middle;
+}
+
+#clock {
+    margin-left: 20px;
+    font-family: 'MS Sans Serif';
+    font-size: 14px;
+}
+
+#size-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.difficulty-btn {
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.difficulty-btn img {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #BFBFBF;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #7B7B7B;
+    border-right-color: #7B7B7B;
+}
+
+.difficulty-btn img:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.revealed {
+    font-family: "Press Start";
+    background-color: #C0C0C0;
+    font-size: 80%;
+    text-align: center;
+    border: none;
+}
+
+td {
+    height: 20px;
+    width: 20px;
+    background-color: #C0C0C0;
+    border: 1.5px solid;
+    border-top-color: #ffffff;
+    border-right-color: #7B7B7B;
+    border-bottom-color: #7B7B7B;
+    border-left-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#timer, #bomb-counter {
+    font-family: 'Digital Dismay';
+    font-size: 35px;
+    letter-spacing: 1px;
+    color: red;
+    background-color: black;
+    text-align: center;
+    padding: 4px 4px 0 7px;
+    line-height: 1em;
+}
+
+#status-bar  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+    margin: 6px;
+    border-top: 2px solid #7B7B7B;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    border-left: 2px solid #7B7B7B;
+}
+
+#reset {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+}
+
+#reset:hover {
+    cursor: pointer;
+}
+
+/* main.css */
+
+/* Importación de fuentes */
+@font-face {
+    font-family: "Digital Dismay";
+    src: url("./digital-dismay.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Press Start";
+    src: url("./prstart.ttf");
+}
+
+@font-face {
+    font-family: "MS Sans Serif";
+    src: url("./micross.ttf");
+}
+
+* {
+    -o-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-color: #0D8584;
+}
+
+#board {
+    background-color: lightgray;
+    margin: 20px auto;
+}
+
+button {
+    font-family: 'MS Sans Serif';
+    text-align: left;
+    font-size: 14px;
+    height: 30px;
+    width: 100px;
+    background-color: #BFBFBF;
+    color: black;
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+}
+
+button:hover {
+    background-color: lightgray;
+    color: slategray;
+    cursor: pointer;
+}
+
+#config-form {
+    font-family: 'MS Sans Serif';
+    background-color: #BFBFBF;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    border: 2px solid #7B7B7B;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+}
+
+#config-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#config-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#config-form button {
+    width: 100%;
+    cursor: pointer;
+}
+
+#clock {
+    font-family: 'MS Sans Serif';
+    font-size: 14px;
+    display: inline;
+    float: right;
+    border-top: 1.5px solid #808080;
+    border-left: 1.5px solid #808080;
+    border-right: 1.5px solid #FAFAFA;
+    border-bottom: 1.5px solid #FAFAFA;
+    width: 200px;
+    height: 22px;
+    margin: 2px;
+    padding: 5px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #BFBFBF;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#start {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#start img {
+    vertical-align: middle;
+}
+
+#clock {
+    margin-left: 20px;
+    font-family: 'MS Sans Serif';
+    font-size: 14px;
+}
+
+#size-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.difficulty-btn {
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.difficulty-btn img {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #BFBFBF;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #7B7B7B;
+    border-right-color: #7B7B7B;
+}
+
+.difficulty-btn img:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.revealed {
+    font-family: "Press Start";
+    background-color: #C0C0C0;
+    font-size: 80%;
+    text-align: center;
+    border: none;
+}
+
+td {
+    height: 20px;
+    width: 20px;
+    background-color: #C0C0C0;
+    border: 1.5px solid;
+    border-top-color: #ffffff;
+    border-right-color: #7B7B7B;
+    border-bottom-color: #7B7B7B;
+    border-left-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#timer, #bomb-counter {
+    font-family: 'Digital Dismay';
+    font-size: 35px;
+    letter-spacing: 1px;
+    color: red;
+    background-color: black;
+    text-align: center;
+    padding: 4px 4px 0 7px;
+    line-height: 1em;
+}
+
+#status-bar  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+    margin: 6px;
+    border-top: 2px solid #7B7B7B;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    border-left: 2px solid #7B7B7B;
+}
+
+#reset {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+}
+
+#reset:hover {
+    cursor: pointer;
+}
